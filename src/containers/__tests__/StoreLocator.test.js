@@ -27,8 +27,10 @@ describe("StoreLocator", () => {
 describe("chooseMap", () => {
   it('updates state of currentMap using the location passed to it', ()=>{
     let mountedStoreLocator = shallow(<StoreLocator />);
-    let mockEvent = { target: { value: "testland" } };
-    mountedStoreLocator.instance().chooseMap(mockEvent);
-    //expect(mountedStoreLocator.instance().state.currentMap).toBe('testland.png');
+    const button = mountedStoreLocator.find('Button').first().simulate('click', {target : {value : 'testland'} });
+    expect(button.length).toBe(1);
+    // const mountedMap = mountedStoreLocator.find('Map');
+    // const testMap = mountedMap.find('img[src="images/testland.png"]');
+    // expect(testMap.length).toBe(1);
   })
 });

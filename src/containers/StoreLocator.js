@@ -24,7 +24,7 @@ const defaultLocations = [
 
 const StoreLocator = () => {
   const [stores, setStores] = useState(defaultLocations);
-  const [currentMap, setCurrentMap] = useState();
+  const [currentMap, setCurrentMap] = useState('../images/none.png');
 
   const chooseMap = (e) => {
     const location = e.target.value;
@@ -35,7 +35,7 @@ const StoreLocator = () => {
   };
 
   let storeButtons = stores.map((store) => (
-    <Button handleClick={chooseMap} key={store.id} location={store.location} />
+    <Button handleClick={chooseMap} id={store.id} key={store.id} location={store.location} />
   ));
 
   return (
